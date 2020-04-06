@@ -12,7 +12,6 @@ public class OrGate extends Gate {
         nandA = new NandGate();
         nandB = new NandGate();
         nandC = new NandGate();
-
     }
 
     @Override
