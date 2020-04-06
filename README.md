@@ -8,6 +8,7 @@
 <ul>
   <li><a href=https://www.linkedin.com/in/enrico-damiani-125527196/>Enrico Francesco Damiani</a></li>
   <li><a href=https://www.linkedin.com/in/marcosvinis28/>Marcos Vinícius da Silva</a></li>
+  <li>Marco Moliterno Pena Piacentini</li>
 </ul>
 
 <h3>Professor:</h3> 
