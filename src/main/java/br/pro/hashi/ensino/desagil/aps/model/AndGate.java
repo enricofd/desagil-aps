@@ -7,7 +7,7 @@ public class AndGate extends Gate {
     private final NandGate nandC;
 
     public AndGate() {
-        super("OR", 2);
+        super("AND", 2);
 
         nandA = new NandGate();
         nandB = new NandGate();
