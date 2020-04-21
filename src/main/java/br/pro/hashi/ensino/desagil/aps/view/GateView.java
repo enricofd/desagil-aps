@@ -30,7 +30,7 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
 
     public GateView(Gate gate) {
-        super(180, 160);
+        super(180, 120);
 
         this.gate = gate;
         this.light= new Light(255,0,0);
@@ -46,8 +46,8 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         inBox2 = new JCheckBox();
         //outBox = new JCheckBox();
 
-        JLabel inLabel = new JLabel("Entrada:");
-        JLabel outLabel = new JLabel("Saida:");
+        //JLabel inLabel = new JLabel("Entrada:");
+        //JLabel outLabel = new JLabel("Saida:");
 
         //add(inLabel, 8, h, 75, 25);
         //add(inBox1, 10, h+30, 17, 20);
@@ -63,13 +63,13 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
 
         if (gate.getInputSize() > 1) {
-            add(inBox1, 10, h+30, 17, 20);
-            add(inBox2, 10, h+66, 17, 20);
+            add(inBox1, 14, h+32, 17, 20);
+            add(inBox2, 14, h+68, 17, 20);
             inBox2.addActionListener(this);
 
         }
         else {
-            add(inBox1, 10, h+45, 17, 20);
+            add(inBox1, 14, h+50, 17, 20);
         }
 
 
@@ -121,8 +121,8 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         int y = event.getY();
 
 
-        // Se o clique foi dentro do quadrado colorido...
-        if (Math.abs(x-lightx) + Math.abs(y-lighty) >= lightr) {
+        // Se o clique foi dentro do circulo colorido...
+        if ((((x-lightx)*(x-lightx)) + ((y-lighty)*(y-lighty))) <= lightr*lightr) {
 
             // ...então abrimos a janela seletora de cor...
             light.setColor(JColorChooser.showDialog(this, null, light.getColor()));
