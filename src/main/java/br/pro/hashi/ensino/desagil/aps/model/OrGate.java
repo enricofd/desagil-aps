@@ -38,6 +38,6 @@ public class OrGate extends Gate {
 
         nandC.connect(0, nandA);
         nandC.connect(1, nandB);
-        
+
     }
 }

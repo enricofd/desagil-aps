@@ -47,6 +47,6 @@ public class XorGate extends Gate {
 
         nandE.connect(0, nandC);
         nandE.connect(1, nandD);
-        
+
     }
 }
