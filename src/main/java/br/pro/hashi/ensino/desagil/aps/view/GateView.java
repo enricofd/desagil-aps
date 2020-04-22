@@ -24,9 +24,9 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
     //private final JCheckBox outBox;
 
 
-    private int lightx;
-    private int lighty;
-    private int lightr;
+    private final int lightx;
+    private final int lighty;
+    private final int lightr;
 
 
     public GateView(Gate gate) {
@@ -88,7 +88,6 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         if (inBox1.isSelected()) {
             in1.turnOn();
         }
-        ;
 
         gate.connect(0, in1);
 
@@ -97,7 +96,6 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
             if (inBox2.isSelected()) {
                 in2.turnOn();
             }
-            ;
             gate.connect(1, in2);
         }
 
