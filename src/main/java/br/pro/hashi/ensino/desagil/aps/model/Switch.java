@@ -11,6 +11,7 @@ public class Switch implements Emitter {
         signal = true;
     }
 
+    @SuppressWarnings("unused")
     public void turnOff() {
         signal = false;
     }

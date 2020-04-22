@@ -24,16 +24,16 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
     //private final JCheckBox outBox;
 
 
-    private int lightx;
-    private int lighty;
-    private int lightr;
+    private final int lightx;
+    private final int lighty;
+    private final int lightr;
 
 
     public GateView(Gate gate) {
         super(180, 120);
 
         this.gate = gate;
-        this.light= new Light(255,0,0);
+        this.light = new Light(255, 0, 0);
 
         int h = 2;
 
@@ -61,15 +61,13 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         image = getToolkit().getImage(url);
 
 
-
         if (gate.getInputSize() > 1) {
-            add(inBox1, 14, h+32, 17, 20);
-            add(inBox2, 14, h+68, 17, 20);
+            add(inBox1, 14, h + 32, 17, 20);
+            add(inBox2, 14, h + 68, 17, 20);
             inBox2.addActionListener(this);
 
-        }
-        else {
-            add(inBox1, 14, h+50, 17, 20);
+        } else {
+            add(inBox1, 14, h + 50, 17, 20);
         }
 
 
@@ -87,21 +85,25 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
 
         Switch in1 = new Switch();
 
-        if (inBox1.isSelected()) {in1.turnOn();};
+        if (inBox1.isSelected()) {
+            in1.turnOn();
+        }
 
-        gate.connect(0,in1);
+        gate.connect(0, in1);
 
         if (gate.getInputSize() > 1) {
             Switch in2 = new Switch();
-            if (inBox2.isSelected()) {in2.turnOn();};
-            gate.connect(1,in2);
+            if (inBox2.isSelected()) {
+                in2.turnOn();
+            }
+            gate.connect(1, in2);
         }
 
 
         System.out.println(gate.read());
 
         //outBox.setEnabled(true);
-        light.connect(0,gate);
+        light.connect(0, gate);
         //outBox.setEnabled(false);
         repaint();
 
@@ -120,13 +122,13 @@ public class GateView extends FixedPanel implements ActionListener, MouseListene
         int x = event.getX();
         int y = event.getY();
 
-        int dist = Math.abs(x-(lightx+12)) + Math.abs(y-(lighty+12));
+        int dist = Math.abs(x - (lightx + 12)) + Math.abs(y - (lighty + 12));
         System.out.println(dist);
         System.out.println("r" + lightr);
 
 
         // Se o clique foi dentro do circulo colorido...
-        if ( dist <= 16) {
+        if (dist <= 16) {
 
             // ...então abrimos a janela seletora de cor...
             light.setColor(JColorChooser.showDialog(this, null, Color.RED));
